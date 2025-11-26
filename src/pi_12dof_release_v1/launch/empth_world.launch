@@ -1,0 +1,32 @@
+<launch>
+
+    <!-- 仿真相关参数 -->
+    <arg name="paused" default="true"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <!-- 向参数服务器载入urdf/xacro -->
+    <!-- <param name="robot_description" command="$(find xacro)/xacro $(find dexbot_urdf)/urdf/dexbot_urdf.urdf" /> -->
+    <param name="robot_description" textfile="$(find pi_12dof_release_v1)/urdf/pi_12dof_release_v1.urdf" />
+
+    <rosparam file = "$(find hit_robot_hw)/config/hw_pi_sim.yaml" command="load" />
+
+      <!-- 载入地图资源，启动gazebo -->
+    <!-- <include file="$(find hit_robot_description)/launch/world.launch"> -->
+      <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="headless" value="$(arg headless)"/>
+        <!-- <arg name="real_time_factor" value = "0.5" /> -->
+      </include>
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <!-- 将urdf加载进gazebo -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model pai_robot -param robot_description 
+                -z 0.37" />
+</launch>

@@ -1,0 +1,6 @@
+robot_pai_controller
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/robot_pai_controller/cmake.lock /home/ldc/hit_robot/DMEC_deploy/devel/./cmake.lock
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/robot_pai_controller/share/robot_pai_controller/cmake/robot_pai_controllerConfig-version.cmake /home/ldc/hit_robot/DMEC_deploy/devel/share/robot_pai_controller/cmake/robot_pai_controllerConfig-version.cmake
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/robot_pai_controller/share/robot_pai_controller/cmake/robot_pai_controllerConfig.cmake /home/ldc/hit_robot/DMEC_deploy/devel/share/robot_pai_controller/cmake/robot_pai_controllerConfig.cmake
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/robot_pai_controller/lib/librobot_pai_controller.so /home/ldc/hit_robot/DMEC_deploy/devel/lib/librobot_pai_controller.so
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/robot_pai_controller/lib/pkgconfig/robot_pai_controller.pc /home/ldc/hit_robot/DMEC_deploy/devel/lib/pkgconfig/robot_pai_controller.pc

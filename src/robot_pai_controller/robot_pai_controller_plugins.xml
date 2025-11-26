@@ -1,0 +1,17 @@
+<library path="lib/librobot_pai_controller">
+
+    <class name="robot_pai/ControllerBase" type="robot_pai::ControllerBase"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+            The controller base.
+        </description>
+    </class>
+
+    <class name="robot_pai/PPOController" type="robot_pai::PPOController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+            The PPOController .
+        </description>
+    </class>
+
+</library>

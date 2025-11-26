@@ -1,0 +1,72 @@
+teleop:
+  walk:
+    type: topic
+    message_type: geometry_msgs/Twist
+    # topic_name: /tps/cmd_vel
+    topic_name: /cmd_vel
+    deadman_buttons: []
+    axis_mappings:
+      - axis: 3
+        target: angular.z
+        scale: 1.
+      - axis: 1
+        target: linear.x
+        scale: 0.6
+      - axis: 0
+        target: linear.y
+        scale: 0.3
+
+  emergency_stop:
+    type: topic
+    message_type: std_msgs/Float32
+    topic_name: emergency_stop
+    deadman_buttons: [ 6 ]
+    axis_mappings:
+      - button: 6
+        target: data
+        scale: 2
+        offset: 0
+
+  start_control:
+    type: topic
+    message_type: std_msgs/Float32
+    topic_name: start_control
+    deadman_buttons: [ 7 ]
+    axis_mappings:
+      - button: 7
+        target: data
+        scale: 2
+        offset: 0
+
+  low_fast_change:
+    type: topic
+    message_type: std_msgs/Float32
+    topic_name: low_fast_change
+    deadman_buttons: [ 5 ]
+    axis_mappings:
+      - button: 5
+        target: data
+        scale: 2
+        offset: 0
+
+  end_control:
+    type: topic
+    message_type: std_msgs/Float32
+    topic_name: end_control
+    deadman_buttons: [ 4 ]
+    axis_mappings:
+      - button: 4 
+        target: data
+        scale: 2
+        offset: 0
+
+  load_control:
+    type: topic
+    message_type: std_msgs/Float32
+    topic_name: load_control
+    deadman_buttons: [ 8 ]
+    axis_mappings:
+      - button: 8 
+        target: data
+        scale: 2
+        offset: 0

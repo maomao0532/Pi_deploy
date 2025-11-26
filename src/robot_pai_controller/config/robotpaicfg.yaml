@@ -1,0 +1,69 @@
+LeggedRobotCfg:
+  init_state:
+    default_joint_angle:
+      l_hip_yaw_joint: 0.
+      l_hip_roll_joint: 0.
+      l_hip_pitch_joint: -0.
+      l_knee_pitch_joint:  0.
+      l_ankle_pitch_joint: -0.
+      l_ankle_roll_joint: 0.
+      r_hip_yaw_joint: 0.
+      r_hip_roll_joint: 0.
+      r_hip_pitch_joint: -0.
+      r_knee_pitch_joint: 0.
+      r_ankle_pitch_joint: -0.
+      r_ankle_roll_joint: 0.
+  
+  control:
+    # PD Drive parameters:
+    stiffness:
+      hip_yaw_joint: 10
+      hip_roll_joint: 10
+      hip_pitch_joint: 10
+      knee_pitch_joint: 15
+      ankle_pitch_joint: 10
+      ankle_roll_joint: 5
+
+      # hip_yaw_joint: 40
+      # hip_roll_joint: 40
+      # hip_pitch_joint: 80
+      # knee_pitch_joint: 80
+      # ankle_pitch_joint: 15
+      # ankle_roll_joint: 15
+    damping:
+      hip_yaw_joint: 0.5
+      hip_roll_joint: 0.5
+      hip_pitch_joint: 0.5
+      knee_pitch_joint: 0.5
+      ankle_pitch_joint: 0.5
+      ankle_roll_joint: 0.25
+
+      # hip_yaw_joint: 0.25
+      # hip_roll_joint: 0.25
+      # hip_pitch_joint: 0.25
+      # knee_pitch_joint: 0.25
+      # ankle_pitch_joint: 0.25
+      # ankle_roll_joint: 0.25
+
+    # action_scale: 0.5
+    # decimation: 5
+    action_scale: 0.25  # 404onnx
+    decimation: 10
+    
+  normalization:
+    clip_scales:
+      clip_observations: 100.
+      clip_actions: 100.
+      # clip_observations: 18.
+      # clip_actions: 18.
+    obs_scales:
+      lin_vel: 2.0
+      ang_vel: 1.0
+      dof_pos: 1.0
+      dof_vel: 0.05
+      height_measurements : 5.0
+      quat: 1.0
+  
+  size:
+    actions_size: 12
+    observations_size: 450

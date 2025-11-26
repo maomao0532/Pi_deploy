@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+    <include file="$(find robot_pai_controller)/launch/joy_teleop.launch"/>
+
+    <!-- <include file="$(find pai_description)/launch/empty_world.launch" /> -->
+
+    <rosparam file="$(find robot_pai_controller)/config/robotpaicfg.yaml" command="load"/>
+    <rosparam file="$(find robot_pai_controller)/config/controllers.yaml" command="load"/>
+
+    <param name="policyFile" value="$(find robot_pai_controller)/policy/policy_zero_jointpos.onnx"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" 
+        respawn="false" output="screen" args="
+        controllers/ppo_controller"/>
+    
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_pai_controller)/rviz/visual_rviz.rviz" output="screen" /> -->
+
+</launch>

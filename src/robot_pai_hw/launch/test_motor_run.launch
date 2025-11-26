@@ -1,0 +1,12 @@
+<launch>
+    <!-- <arg name="debug" default="false"/> -->
+    <!-- <arg name="debug" default="false"/> -->
+    <arg name = "dof_type" default = "12"/>
+    <arg name = "mcu_type" default = "STM32H730"/>
+    <arg name = "model_type" default = "test"/>
+    <arg name = "design" default = "Orin"/>   
+    <rosparam file="$(find robot_pai_hw)/config/$(arg dof_type)dof_$(arg mcu_type)_model_$(arg model_type)_$(arg design)_params.yaml" command="load" />
+    <!-- <rosparam file="$(find serial_test)/robot_param/10dof_STM32H730_model_P_Hector_params.yaml" command="load" /> -->
+
+    <node pkg="robot_pai_hw" name="test_motor_run" type="test_motor_run" output="screen" />
+</launch>

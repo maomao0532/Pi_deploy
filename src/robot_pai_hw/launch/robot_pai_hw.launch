@@ -1,0 +1,26 @@
+<launch>
+    <!-- <arg name="debug" default="false"/> -->
+    <!-- <arg name="debug" default="false"/> -->
+    <arg name = "dof_type" default = "12"/>
+    <arg name = "mcu_type" default = "STM32H730"/>
+    <arg name = "model_type" default = "test"/>
+    <arg name = "design" default = "Orin"/>   
+    <rosparam file="$(find robot_pai_hw)/config/$(arg dof_type)dof_$(arg mcu_type)_model_$(arg model_type)_$(arg design)_params.yaml" command="load" />
+    <!-- <rosparam file="$(find serial_test)/robot_param/10dof_STM32H730_model_P_Hector_params.yaml" command="load" /> -->
+
+    <param name="leftAnkleKinModulePath" value="/home/ldc/hit_robot/robot_pai/src/ik_train/policy/model_left.onnx"/>
+    <param name="rightAnkleKinModulePath" value="/home/ldc/hit_robot/robot_pai/src/ik_train/policy/model_right.onnx"/>
+
+    <!-- 向参数服务器载入urdf/xacro -->
+    <param name="robot_description" textfile="$(find pi_12dof_release_v1)/urdf/pi_12dof_release_v1.urdf" />
+
+    <rosparam file="$(find robot_pai_hw)/config/robot_pai_hw.yaml" command="load"/>
+
+    <include file="$(find fdilink_ahrs)/launch/ahrs_data.launch"/>
+
+    <node name="legged_hw" pkg="robot_pai_hw" type="robot_pai_hw_node" respawn="false"
+          clear_params="true"/>
+
+    <node pkg="rviz" type="rviz" name="rviz"  args="-d $(find robot_pai_hw)/config/robot_deploy.rviz" output="screen" />
+
+</launch>

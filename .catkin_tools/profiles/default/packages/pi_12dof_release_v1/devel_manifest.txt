@@ -1,0 +1,5 @@
+pi_12dof_release_v1
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/pi_12dof_release_v1/cmake.lock /home/ldc/hit_robot/DMEC_deploy/devel/./cmake.lock
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/pi_12dof_release_v1/share/pi_12dof_release_v1/cmake/pi_12dof_release_v1Config-version.cmake /home/ldc/hit_robot/DMEC_deploy/devel/share/pi_12dof_release_v1/cmake/pi_12dof_release_v1Config-version.cmake
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/pi_12dof_release_v1/share/pi_12dof_release_v1/cmake/pi_12dof_release_v1Config.cmake /home/ldc/hit_robot/DMEC_deploy/devel/share/pi_12dof_release_v1/cmake/pi_12dof_release_v1Config.cmake
+/home/ldc/hit_robot/DMEC_deploy/devel/.private/pi_12dof_release_v1/lib/pkgconfig/pi_12dof_release_v1.pc /home/ldc/hit_robot/DMEC_deploy/devel/lib/pkgconfig/pi_12dof_release_v1.pc
